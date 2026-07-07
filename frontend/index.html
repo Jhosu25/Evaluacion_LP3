@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MediCare - Panel</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header><h1>MediCare</h1></header>
+
+<!-- LOGIN -->
+<div id="loginBox" class="contenedor">
+    <div class="caja">
+        <h2>Iniciar sesion</h2>
+        <div id="loginError" class="alerta error-msg" style="display:none;"></div>
+        <label>Usuario:</label>
+        <input type="text" id="username" value="admin">
+        <label>Contrasena:</label>
+        <input type="password" id="password" value="admin123">
+        <button class="btn" onclick="login()">Ingresar</button>
+        <p class="nota">Pruebas: admin/admin123 (ADMIN) - user/user123 (USER)</p>
+    </div>
+</div>
+
+<!-- PANEL -->
+<div id="panel" class="contenedor" style="display:none;">
+    <p>Sesion: <strong id="infoUsuario"></strong>
+        <button class="btn btn-sec" onclick="logout()">Salir</button></p>
+
+    <div class="grid">
+        <!-- MEDICOS -->
+        <div class="caja">
+            <h2>Medicos</h2>
+            <button class="btn" onclick="listarMedicos()">Listar medicos</button>
+            <h3>Nuevo medico</h3>
+            <input type="text" id="mNombre" placeholder="Nombre">
+            <input type="text" id="mEspecialidad" placeholder="Especialidad">
+            <input type="text" id="mTelefono" placeholder="Telefono">
+            <input type="text" id="mCorreo" placeholder="Correo">
+            <button class="btn" onclick="crearMedico()">Crear medico</button>
+            <table id="tablaMedicos"></table>
+        </div>
+
+        <!-- PACIENTES -->
+        <div class="caja">
+            <h2>Pacientes</h2>
+            <button class="btn" onclick="listarPacientes()">Listar pacientes</button>
+            <h3>Nuevo paciente</h3>
+            <input type="text" id="pNombre" placeholder="Nombre">
+            <input type="number" id="pEdad" placeholder="Edad">
+            <button class="btn" onclick="crearPaciente()">Crear paciente</button>
+            <table id="tablaPacientes"></table>
+        </div>
+    </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
